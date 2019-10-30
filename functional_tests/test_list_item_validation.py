@@ -1,6 +1,6 @@
 from selenium.webdriver.common.keys import Keys
 from .base import FunctionalTest
-
+from selenium.common.exceptions import WebDriverException
 
 class ItemValidationTest(FunctionalTest):
         
