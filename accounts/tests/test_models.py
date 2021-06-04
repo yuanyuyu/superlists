@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.contrib import auth
 from accounts.models import Token
-
 User = auth.get_user_model()
 
 class UserModelTest(TestCase):
@@ -18,7 +17,7 @@ class UserModelTest(TestCase):
         user = User.objects.create(email='edith@example.com')
         user.backend = ''
         request = self.client.request().wsgi_request
-        auth.login(request, user) 
+        auth.login(request, user) #should not raise
 
 
 class TokenModelTest(TestCase):

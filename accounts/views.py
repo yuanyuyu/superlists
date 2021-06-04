@@ -6,7 +6,8 @@ from django.urls import reverse
 import sys
 from django.contrib.auth import authenticate
 from django.contrib import auth, messages
-from email.mime.text import MIMEText
+from django.contrib.auth import login as auth_login, logout as auth_logout
+
 
 
 
@@ -35,6 +36,8 @@ def login(request):
     if user:
         auth.login(request, user)
     return redirect('/')
+
+
 
 
 
